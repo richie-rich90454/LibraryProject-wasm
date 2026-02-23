@@ -20,7 +20,6 @@ func find_player() -> void:
 	player_node = Global.player_node
 
 func _ready() -> void:
-	print(Global.student_count)
 	if Global.student_count < 20:
 		Global.student_count = Global.student_count + 1
 		animated_sprite = $StudentSprite

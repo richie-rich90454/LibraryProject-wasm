@@ -1,6 +1,6 @@
 extends Node
 
-@export var book_scene: PackedScene
+@export var student_scene: PackedScene
 @export var min_spawn_delay: float = 5.0
 @export var max_spawn_delay: float = 15.0
 
@@ -14,7 +14,8 @@ func spawn_book_after_random_delay() -> void:
 	spawn_book_after_random_delay()
 
 func spawn_book() -> void:
-	if not book_scene:
+	if not student_scene:
 		return
-	var new_book = book_scene.instantiate()
-	get_tree().root.add_child(new_book)
+	var new_student = student_scene.instantiate()
+	Global.fighting = false
+	get_tree().root.add_child(new_student)
