@@ -56,4 +56,3 @@ navigation_polygon = SubResource("NavigationPolygon_o5yvi")
 travel_cost = 5.0
 
 [node name="Fighting" parent="." instance=ExtResource("10_ldgsr")]
-position = Vector2(-72, -25)
