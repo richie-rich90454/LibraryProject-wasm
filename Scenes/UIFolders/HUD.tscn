@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsbp7nmgsjuit"]
+[gd_scene format=3 uid="uid://bsbp7nmgsjuit"]
 
-[ext_resource type="Script" path="res://Scripts/score_count.gd" id="1_sd512"]
+[ext_resource type="Script" uid="uid://dwgpu6obvbbix" path="res://Scripts/score_count.gd" id="1_sd512"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_entsu"]
 bg_color = Color(0.378666, 0.643731, 0.733326, 1)
@@ -14,7 +14,7 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="Hud" type="Control"]
+[node name="Hud" type="Control" unique_id=316917241]
 layout_mode = 3
 anchor_left = -0.483
 anchor_top = -0.481
@@ -27,7 +27,7 @@ offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Score_count" type="Label" parent="."]
+[node name="Score_count" type="Label" parent="." unique_id=1575777979]
 layout_mode = 0
 offset_left = 927.0
 offset_top = 14.0
@@ -40,46 +40,43 @@ text = "  Score: "
 script = ExtResource("1_sd512")
 metadata/_edit_use_anchors_ = true
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1551426042]
 layout_mode = 1
 offset_right = 398.0
 offset_bottom = 27.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Right" type="Button" parent="."]
-layout_mode = 0
+[node name="UserOnScreenControl" type="Node2D" parent="." unique_id=2062754688]
+
+[node name="Right" type="Button" parent="UserOnScreenControl" unique_id=1489062566]
 offset_left = 1050.0
 offset_top = 511.0
 offset_right = 1117.0
 offset_bottom = 575.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Up" type="Button" parent="."]
-layout_mode = 0
+[node name="Up" type="Button" parent="UserOnScreenControl" unique_id=301625288]
 offset_left = 1012.0
 offset_top = 444.0
 offset_right = 1079.0
 offset_bottom = 508.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Left" type="Button" parent="."]
-layout_mode = 0
+[node name="Left" type="Button" parent="UserOnScreenControl" unique_id=888525280]
 offset_left = 974.0
 offset_top = 511.0
 offset_right = 1041.0
 offset_bottom = 575.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Down" type="Button" parent="."]
-layout_mode = 0
+[node name="Down" type="Button" parent="UserOnScreenControl" unique_id=1928425105]
 offset_left = 1013.0
 offset_top = 578.0
 offset_right = 1080.0
 offset_bottom = 642.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Down2" type="Button" parent="."]
-layout_mode = 0
+[node name="Sprint" type="Button" parent="UserOnScreenControl" unique_id=1178339307]
 offset_left = 35.0
 offset_top = 559.0
 offset_right = 102.0
