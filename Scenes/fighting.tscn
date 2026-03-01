@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://bmaeypeah1ebq"]
+
+[ext_resource type="Script" uid="uid://dswhxtxwdf2nh" path="res://fighting.gd" id="1_bcuv0"]
+[ext_resource type="Texture2D" uid="uid://d073d47lott2l" path="res://Assets/MapAssets/Placeholders.png" id="1_fhat6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcuv0"]
+size = Vector2(24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4esb"]
+atlas = ExtResource("1_fhat6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neyax"]
+atlas = ExtResource("1_fhat6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ajkl"]
+atlas = ExtResource("1_fhat6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcuv0"]
+atlas = ExtResource("1_fhat6")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffurp"]
+atlas = ExtResource("1_fhat6")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovra7"]
+atlas = ExtResource("1_fhat6")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ekmfw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4esb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neyax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ajkl")
+}],
+"loop": true,
+"name": &"fighting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcuv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffurp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovra7")
+}],
+"loop": true,
+"name": &"stopped",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4esb"]
+size = Vector2(26, 26)
+
+[node name="Fighting" type="CharacterBody2D"]
+script = ExtResource("1_bcuv0")
+
+[node name="FightCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bcuv0")
+
+[node name="FightSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(8.34465e-07, -5.9604645e-08)
+scale = Vector2(0.75, 0.75000006)
+sprite_frames = SubResource("SpriteFrames_ekmfw")
+animation = &"fighting"
+autoplay = "fighting"
+
+[node name="FightingArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FightingArea"]
+shape = SubResource("RectangleShape2D_f4esb")

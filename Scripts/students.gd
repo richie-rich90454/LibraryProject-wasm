@@ -15,13 +15,11 @@ const STUCK_THRESHOLD: float = 10.0  # Pixels movement considered "not stuck"
 const STUCK_TIME_LIMIT: float = 5  # Seconds before getting new target
 
 # For animation tracking
-var last_direction: Vector2 = Vector2.DOWN  # Default facing direction
-
+var last_direction: Vector2 = Vector2.DOWN  
 func find_player() -> void:
 	player_node = Global.player_node
 
 func _ready() -> void:
-	print(Global.student_count)
 	if Global.student_count < 20:
 		Global.student_count = Global.student_count + 1
 		animated_sprite = $StudentSprite
@@ -31,6 +29,8 @@ func _ready() -> void:
 			animated_sprite.play("StudentIdle")  # Just StudentIdle
 		# Initialize stuck detection
 		last_position = global_position
+	else:
+		queue_free()
 	
 func randomize_spawn_position() -> void:
 	if Global.studentspawnarea.size() > 0:
