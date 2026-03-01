@@ -138,6 +138,7 @@ sprite_frames = SubResource("SpriteFrames_cgts5")
 animation = &"MoveUp"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 29)
 shape = SubResource("RectangleShape2D_a3adp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
