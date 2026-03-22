@@ -25,7 +25,7 @@ func _ready() -> void:
 	randomize_spawn_position()
 	
 	if fight_Sprite:
-		play_player_idle_animation()
+		#play_player_idle_animation()
 		# Connect animation finished signal (to detect when BookOrganize ends)
 		fight_Sprite.animation_finished.connect(_on_animation_finished)
 
@@ -35,9 +35,9 @@ func randomize_spawn_position() -> void:
 	global_position = Vector2(random_x, random_y)
 
 # Play the looping BookIdle animation
-func play_player_idle_animation() -> void:
-	if fight_Sprite.animation != "StudentIdle":
-		fight_Sprite.play("StudentIdle")
+#func play_player_idle_animation() -> void:
+	#if fight_Sprite.animation != "StudentIdle":
+		#fight_Sprite.play("StudentIdle")
 
 # Play the one-shot BookOrganize animation (non-looping)
 func play_book_organize_animation() -> void:

@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsbp7nmgsjuit"]
+[gd_scene load_steps=7 format=3 uid="uid://bsbp7nmgsjuit"]
 
 [ext_resource type="Script" path="res://Scripts/score_count.gd" id="1_sd512"]
+[ext_resource type="Script" uid="uid://cpjgb7cbh7xcr" path="res://Scripts/right.gd" id="2_vagh1"]
+[ext_resource type="Script" uid="uid://cgbiuyvxleco3" path="res://Scripts/up.gd" id="3_xhb6w"]
+[ext_resource type="Script" uid="uid://bga1pqbjfedcn" path="res://Scripts/left.gd" id="4_xhb6w"]
+[ext_resource type="Script" uid="uid://ctkob60p5mcsd" path="res://Scripts/down.gd" id="5_ydgmi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_entsu"]
 bg_color = Color(0.378666, 0.643731, 0.733326, 1)
@@ -20,19 +24,20 @@ anchor_left = -0.483
 anchor_top = -0.481
 anchor_right = 0.517
 anchor_bottom = 0.5
-offset_left = 556.416
-offset_top = 307.688
-offset_right = 556.416
-offset_bottom = 320.0
+offset_left = 619.24
+offset_top = 345.32
+offset_right = 619.24
+offset_bottom = 357.632
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Score_count" type="Label" parent="."]
-layout_mode = 0
-offset_left = 927.0
-offset_top = 14.0
-offset_right = 1140.0
-offset_bottom = 72.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_right = 120.0
+offset_bottom = 50.0
+
+[node name="Score_count" type="Label" parent="MarginContainer"]
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_entsu")
@@ -40,52 +45,36 @@ text = "  Score: "
 script = ExtResource("1_sd512")
 metadata/_edit_use_anchors_ = true
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0894097
-anchor_top = 0.0910494
-anchor_right = 0.0894097
-anchor_bottom = 0.0910494
-offset_right = 398.0
-offset_bottom = 27.0
-metadata/_edit_use_anchors_ = true
+[node name="UserOnScreenControl" type="Node2D" parent="MarginContainer"]
 
-[node name="UserOnScreenControl" type="Node2D" parent="."]
-
-[node name="Right" type="Button" parent="UserOnScreenControl"]
+[node name="Right" type="Button" parent="MarginContainer/UserOnScreenControl"]
 offset_left = 1050.0
 offset_top = 511.0
 offset_right = 1117.0
 offset_bottom = 575.0
+script = ExtResource("2_vagh1")
 metadata/_edit_use_anchors_ = true
 
-[node name="Up" type="Button" parent="UserOnScreenControl"]
+[node name="Up" type="Button" parent="MarginContainer/UserOnScreenControl"]
 offset_left = 1012.0
 offset_top = 444.0
 offset_right = 1079.0
 offset_bottom = 508.0
+script = ExtResource("3_xhb6w")
 metadata/_edit_use_anchors_ = true
 
-[node name="Left" type="Button" parent="UserOnScreenControl"]
+[node name="Left" type="Button" parent="MarginContainer/UserOnScreenControl"]
 offset_left = 974.0
 offset_top = 511.0
 offset_right = 1041.0
 offset_bottom = 575.0
+script = ExtResource("4_xhb6w")
 metadata/_edit_use_anchors_ = true
 
-[node name="Down" type="Button" parent="UserOnScreenControl"]
+[node name="Down" type="Button" parent="MarginContainer/UserOnScreenControl"]
 offset_left = 1013.0
 offset_top = 578.0
 offset_right = 1080.0
 offset_bottom = 642.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprint" type="Button" parent="UserOnScreenControl"]
-offset_left = 35.0
-offset_top = 559.0
-offset_right = 102.0
-offset_bottom = 623.0
-text = "Sprint
-"
+script = ExtResource("5_ydgmi")
 metadata/_edit_use_anchors_ = true

@@ -71,8 +71,8 @@ script = ExtResource("1_bcuv0")
 shape = SubResource("RectangleShape2D_bcuv0")
 
 [node name="FightSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(8.34465e-07, -5.9604645e-08)
-scale = Vector2(0.75, 0.75000006)
+position = Vector2(8.34465e-07, -5.96046e-08)
+scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_ekmfw")
 animation = &"fighting"
 autoplay = "fighting"
