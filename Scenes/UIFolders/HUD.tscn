@@ -20,6 +20,12 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xqwax"]
+blend_mode = 1
+
+[sub_resource type="Theme" id="Theme_g7fuy"]
+/fonts/ihioed = null
+
 [node name="Hud" type="Control" unique_id=1350809081]
 layout_mode = 3
 anchor_left = -0.483
@@ -144,5 +150,14 @@ offset_right = 1036.0
 offset_bottom = 602.0
 script = ExtResource("5_ydgmi")
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=628520325]
+material = SubResource("CanvasItemMaterial_xqwax")
+layout_mode = 0
+offset_left = 32.0
+offset_top = 452.0
+offset_right = 264.0
+offset_bottom = 696.0
+theme = SubResource("Theme_g7fuy")
 
 [connection signal="toggled" from="ObjectiveBar/CheckButton" to="ObjectiveBar/CheckButton" method="_on_toggled"]

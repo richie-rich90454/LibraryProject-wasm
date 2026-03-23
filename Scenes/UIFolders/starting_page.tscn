@@ -63,6 +63,7 @@ text = "Start Game"
 script = ExtResource("3_t7jmd")
 
 [node name="Options" type="Button" parent="VBoxContainer" unique_id=683798157]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 46
