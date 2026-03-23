@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://3c5w6dud362i"]
+
+[ext_resource type="Script" uid="uid://y6rj6ko2qkdo" path="res://Scripts/lvl_1.gd" id="1_chbko"]
+
+[node name="LevelSelect" type="Control" unique_id=718111861]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lvl1" type="Button" parent="." unique_id=657140245]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 337.0
+grow_vertical = 2
+text = "Level 1"
+script = ExtResource("1_chbko")
+
+[node name="Lvl2" type="Button" parent="." unique_id=64109371]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -177.0
+offset_right = 168.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 2"
+
+[node name="Lvl3" type="Button" parent="." unique_id=1320899738]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -337.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Level 3
+"
