@@ -168,3 +168,5 @@ script = ExtResource("5_x3wgy")
 
 [node name="Options Menu" parent="CanvasLayer" unique_id=1283740867 instance=ExtResource("6_x3wgy")]
 process_mode = 3
+offset_right = 26.0
+offset_bottom = 15.0
