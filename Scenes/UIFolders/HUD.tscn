@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dc1o3qrrs1jyg" path="res://Scripts/ObjectivesCloseOpen.gd" id="1_khrgo"]
 [ext_resource type="Script" uid="uid://dwgpu6obvbbix" path="res://Scripts/score_count.gd" id="1_sd512"]
+[ext_resource type="Script" uid="uid://cbqoanufhogto" path="res://Scripts/SettingsButton.gd" id="1_xqwax"]
 [ext_resource type="Script" path="res://Scripts/right.gd" id="2_vagh1"]
 [ext_resource type="Script" path="res://Scripts/up.gd" id="3_xhb6w"]
 [ext_resource type="Script" path="res://Scripts/left.gd" id="4_xhb6w"]
@@ -31,6 +32,15 @@ offset_right = 26.599976
 offset_bottom = 25.711914
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=568614561]
+layout_mode = 0
+offset_left = 695.0
+offset_top = 39.0
+offset_right = 768.0
+offset_bottom = 115.0
+text = "Options"
+script = ExtResource("1_xqwax")
 
 [node name="ObjectiveBar" type="Control" parent="." unique_id=1479055040]
 anchors_preset = 0

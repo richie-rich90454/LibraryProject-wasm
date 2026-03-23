@@ -12,3 +12,4 @@ var first_food = 0
 var LR = 0
 var UD = 0
 var volume = 0
+var hPage = 0

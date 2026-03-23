@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/h_slider.gd" id="1_4u6qn"]
 [ext_resource type="Script" path="res://Scripts/resolutions.gd" id="2_4qfj6"]
 [ext_resource type="Script" uid="uid://d37ictnkbijnf" path="res://Scripts/QuitButton.gd" id="3_4qfj6"]
+[ext_resource type="Script" uid="uid://duhii04dm0qee" path="res://Scripts/Rejoin.gd" id="3_jvecm"]
 
 [node name="Options Menu" type="Control" unique_id=138066737]
 layout_mode = 3
@@ -47,8 +48,21 @@ popup/item_2/text = "1280x720"
 popup/item_2/id = 2
 script = ExtResource("2_4qfj6")
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=652399772]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=477095918]
+layout_direction = 1
 layout_mode = 2
+
+[node name="GoBack" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=63066542]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "CLOSE OPTIONS"
+script = ExtResource("3_jvecm")
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=652399772]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 text = "QUIT GAME
 "
 script = ExtResource("3_4qfj6")
