@@ -3,12 +3,6 @@ extends TileMapLayer
 func _ready():
 	# Array of atlas coordinates to look for
 	var target_atlas_coords = [
-		Vector2i(14, 9),
-		Vector2i(16, 9), 
-		Vector2i(15, 9),
-		Vector2i(14, 10), 
-		Vector2i(15, 10), 
-		Vector2i(16, 10),
 		Vector2i(11, 13),
 		Vector2i(12, 13), 
 		Vector2i(13, 13),
