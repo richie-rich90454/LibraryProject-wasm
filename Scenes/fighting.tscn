@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmaeypeah1ebq"]
+[gd_scene format=3 uid="uid://bmaeypeah1ebq"]
 
 [ext_resource type="Script" uid="uid://dswhxtxwdf2nh" path="res://fighting.gd" id="1_bcuv0"]
 [ext_resource type="Texture2D" uid="uid://d073d47lott2l" path="res://Assets/MapAssets/Placeholders.png" id="1_fhat6"]
@@ -64,20 +64,20 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f4esb"]
 size = Vector2(26, 26)
 
-[node name="Fighting" type="CharacterBody2D"]
+[node name="Fighting" type="CharacterBody2D" unique_id=1144020916]
 script = ExtResource("1_bcuv0")
 
-[node name="FightCollision" type="CollisionShape2D" parent="."]
+[node name="FightCollision" type="CollisionShape2D" parent="." unique_id=146584412]
 shape = SubResource("RectangleShape2D_bcuv0")
 
-[node name="FightSprite" type="AnimatedSprite2D" parent="."]
+[node name="FightSprite" type="AnimatedSprite2D" parent="." unique_id=1182640916]
 position = Vector2(8.34465e-07, -5.96046e-08)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_ekmfw")
 animation = &"fighting"
 autoplay = "fighting"
 
-[node name="FightingArea" type="Area2D" parent="."]
+[node name="FightingArea" type="Area2D" parent="." unique_id=278160758]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FightingArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FightingArea" unique_id=1670168006]
 shape = SubResource("RectangleShape2D_f4esb")
