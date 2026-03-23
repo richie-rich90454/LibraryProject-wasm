@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsbp7nmgsjuit"]
+[gd_scene format=3 uid="uid://bsbp7nmgsjuit"]
 
-[ext_resource type="Script" path="res://Scripts/score_count.gd" id="1_sd512"]
-[ext_resource type="Script" uid="uid://cpjgb7cbh7xcr" path="res://Scripts/right.gd" id="2_vagh1"]
-[ext_resource type="Script" uid="uid://cgbiuyvxleco3" path="res://Scripts/up.gd" id="3_xhb6w"]
-[ext_resource type="Script" uid="uid://bga1pqbjfedcn" path="res://Scripts/left.gd" id="4_xhb6w"]
-[ext_resource type="Script" uid="uid://ctkob60p5mcsd" path="res://Scripts/down.gd" id="5_ydgmi"]
+[ext_resource type="Script" uid="uid://dc1o3qrrs1jyg" path="res://Scripts/ObjectivesCloseOpen.gd" id="1_khrgo"]
+[ext_resource type="Script" uid="uid://dwgpu6obvbbix" path="res://Scripts/score_count.gd" id="1_sd512"]
+[ext_resource type="Script" path="res://Scripts/right.gd" id="2_vagh1"]
+[ext_resource type="Script" path="res://Scripts/up.gd" id="3_xhb6w"]
+[ext_resource type="Script" path="res://Scripts/left.gd" id="4_xhb6w"]
+[ext_resource type="Script" path="res://Scripts/down.gd" id="5_ydgmi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_entsu"]
 bg_color = Color(0.378666, 0.643731, 0.733326, 1)
@@ -18,25 +19,80 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="Hud" type="Control"]
+[node name="Hud" type="Control" unique_id=1350809081]
 layout_mode = 3
 anchor_left = -0.483
 anchor_top = -0.481
-anchor_right = 0.517
-anchor_bottom = 0.5
+anchor_right = 0.98
+anchor_bottom = 0.961
 offset_left = 619.24
 offset_top = 345.32
-offset_right = 619.24
-offset_bottom = 357.632
+offset_right = 26.599976
+offset_bottom = 25.711914
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-offset_right = 120.0
-offset_bottom = 50.0
+[node name="ObjectiveBar" type="Control" parent="." unique_id=1479055040]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Score_count" type="Label" parent="MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="ObjectiveBar" unique_id=1870825775]
+layout_mode = 0
+offset_left = 807.0
+offset_top = 61.0
+offset_right = 1207.0
+offset_bottom = 331.0
+color = Color(0.76143235, 0.46764636, 0.08591261, 1)
+
+[node name="MenuBar" type="MenuBar" parent="ObjectiveBar" unique_id=280408465]
+modulate = Color(0.8493072, 0.86873305, 0.97111255, 1)
+self_modulate = Color(0.8315151, 0.7821598, 0.9495732, 1)
+layout_mode = 0
+offset_left = 807.0
+offset_top = 61.0
+offset_right = 1207.0
+offset_bottom = 329.0
+
+[node name="OBJ label" type="RichTextLabel" parent="ObjectiveBar/MenuBar" unique_id=517118225]
+layout_mode = 0
+offset_top = -27.0
+offset_right = 414.0
+offset_bottom = -4.0
+text = "Objectives:"
+fit_content = true
+
+[node name="Objective 1" type="RichTextLabel" parent="ObjectiveBar/MenuBar" unique_id=446617482]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -158.5
+offset_right = 158.5
+offset_bottom = 40.0
+grow_horizontal = 2
+text = " - Clean Up the Sandwiches"
+fit_content = true
+
+[node name="CheckButton" type="CheckButton" parent="ObjectiveBar" unique_id=702926139]
+layout_mode = 0
+offset_left = 1094.0
+offset_top = 10.0
+offset_right = 1205.0
+offset_bottom = 83.0
+text = "Close
+
+"
+script = ExtResource("1_khrgo")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1640521526]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 424.0
+offset_bottom = 111.0
+
+[node name="Score_count" type="Label" parent="MarginContainer" unique_id=356087910]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
@@ -45,36 +101,38 @@ text = "  Score: "
 script = ExtResource("1_sd512")
 metadata/_edit_use_anchors_ = true
 
-[node name="UserOnScreenControl" type="Node2D" parent="MarginContainer"]
+[node name="UserOnScreenControl" type="Node2D" parent="MarginContainer" unique_id=1691519990]
 
-[node name="Right" type="Button" parent="MarginContainer/UserOnScreenControl"]
-offset_left = 1050.0
-offset_top = 511.0
-offset_right = 1117.0
-offset_bottom = 575.0
+[node name="Right" type="Button" parent="MarginContainer/UserOnScreenControl" unique_id=30246019]
+offset_left = 1006.0
+offset_top = 471.0
+offset_right = 1073.0
+offset_bottom = 535.0
 script = ExtResource("2_vagh1")
 metadata/_edit_use_anchors_ = true
 
-[node name="Up" type="Button" parent="MarginContainer/UserOnScreenControl"]
-offset_left = 1012.0
-offset_top = 444.0
-offset_right = 1079.0
-offset_bottom = 508.0
+[node name="Up" type="Button" parent="MarginContainer/UserOnScreenControl" unique_id=913453955]
+offset_left = 968.0
+offset_top = 404.0
+offset_right = 1035.0
+offset_bottom = 468.0
 script = ExtResource("3_xhb6w")
 metadata/_edit_use_anchors_ = true
 
-[node name="Left" type="Button" parent="MarginContainer/UserOnScreenControl"]
-offset_left = 974.0
-offset_top = 511.0
-offset_right = 1041.0
-offset_bottom = 575.0
+[node name="Left" type="Button" parent="MarginContainer/UserOnScreenControl" unique_id=918852393]
+offset_left = 930.0
+offset_top = 471.0
+offset_right = 997.0
+offset_bottom = 535.0
 script = ExtResource("4_xhb6w")
 metadata/_edit_use_anchors_ = true
 
-[node name="Down" type="Button" parent="MarginContainer/UserOnScreenControl"]
-offset_left = 1013.0
-offset_top = 578.0
-offset_right = 1080.0
-offset_bottom = 642.0
+[node name="Down" type="Button" parent="MarginContainer/UserOnScreenControl" unique_id=203686391]
+offset_left = 969.0
+offset_top = 538.0
+offset_right = 1036.0
+offset_bottom = 602.0
 script = ExtResource("5_ydgmi")
 metadata/_edit_use_anchors_ = true
+
+[connection signal="toggled" from="ObjectiveBar/CheckButton" to="ObjectiveBar/CheckButton" method="_on_toggled"]

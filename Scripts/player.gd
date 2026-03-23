@@ -15,7 +15,7 @@ var is_sprinting: bool = false
 var can_sprint: bool = true
 var current_speed: float = move_speed
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	movement_dir = Vector2(
 		Input.get_action_strength("Move_Right") - Input.get_action_strength("Move_Left") + Global.LR,
 		Input.get_action_strength("Move_Down") - Input.get_action_strength("Move_Up") + Global.UD
@@ -51,4 +51,3 @@ func _ready():
 	Global.player_node = self
 	animations.animation = "Idle"
 	animations.play()  # Make sure to play it
-	
