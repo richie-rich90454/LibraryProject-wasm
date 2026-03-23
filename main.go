@@ -48,7 +48,7 @@ func main(){
 			return c.Next()
 		}
 		c.Set("Cache-Control", "no-cache, no-store, must-revalidate")
-		return c.SendFile(filepath.Join(distPath, "index.html"))
+		return c.SendFile(filepath.Join(distPath, "LibraryProject.html"))
 	})
 	port:=os.Getenv("PORT")
 	if port==""{
