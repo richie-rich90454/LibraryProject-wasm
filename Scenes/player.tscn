@@ -134,6 +134,7 @@ size = Vector2(32, 32)
 script = ExtResource("1_cvnsp")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=827611827]
+process_mode = 3
 script = ExtResource("2_3smsa")
 
 [node name="Animations" type="AnimatedSprite2D" parent="." unique_id=955692076]
@@ -153,6 +154,7 @@ anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -576.0
 offset_top = -324.0
 offset_right = -576.0
