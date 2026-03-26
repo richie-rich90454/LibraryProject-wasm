@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://28vujj2q88w7"]
+[gd_scene load_steps=8 format=3 uid="uid://28vujj2q88w7"]
 
 [ext_resource type="Script" uid="uid://ddx6efkqqahc1" path="res://Scripts/starting_page.gd" id="1_8h5le"]
 [ext_resource type="Texture2D" uid="uid://biyw64ud7felm" path="res://Assets/UIAsets/Library_bg.png" id="1_dujba"]
@@ -22,7 +22,7 @@ corner_radius_bottom_left = 16
 shadow_color = Color(0.424762, 0.606788, 1, 0.6)
 shadow_size = 4
 
-[node name="StartingPage" type="Control" unique_id=7159482]
+[node name="StartingPage" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,7 +31,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8h5le")
 
-[node name="Panel" type="Panel" parent="." unique_id=661244497]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,7 +40,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_8h5le")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1752238227]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -54,7 +54,7 @@ offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=1875513162]
+[node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 46
@@ -62,7 +62,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_dujba")
 text = "Start Game"
 script = ExtResource("3_t7jmd")
 
-[node name="Options" type="Button" parent="VBoxContainer" unique_id=683798157]
+[node name="Options" type="Button" parent="VBoxContainer"]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
@@ -72,7 +72,7 @@ text = "Options
 "
 script = ExtResource("4_gff81")
 
-[node name="Quit" type="Button" parent="VBoxContainer" unique_id=1194183081]
+[node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 46
@@ -80,7 +80,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_dujba")
 text = "Quit Game"
 script = ExtResource("5_50rtn")
 
-[node name="Title" type="Label" parent="." unique_id=600590141]
+[node name="Title" type="Label" parent="."]
 layout_mode = 0
 offset_left = 175.0
 offset_top = 48.0

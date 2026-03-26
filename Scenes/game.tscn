@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dy57mk7q2iv7m"]
+[gd_scene load_steps=14 format=3 uid="uid://dy57mk7q2iv7m"]
 
 [ext_resource type="Script" uid="uid://4nsx3ob1dmg2" path="res://Scripts/game.gd" id="1_i6g32"]
 [ext_resource type="PackedScene" uid="uid://ck87m2wamedbo" path="res://Scenes/MapLayers.tscn" id="2_ldgsr"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://qv6wklffk6mr" path="res://Scenes/Students/students.tscn" id="6_i6g32"]
 [ext_resource type="Script" uid="uid://kposr187swfu" path="res://Scripts/student_spawn_manager.gd" id="7_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://cp88da254ptx5" path="res://Scenes/EventFolders/food_on_ground.tscn" id="9_h4fw4"]
-[ext_resource type="PackedScene" path="res://Scenes/fighting.tscn" id="10_ldgsr"]
+[ext_resource type="PackedScene" uid="uid://bmaeypeah1ebq" path="res://Scenes/fighting.tscn" id="10_ldgsr"]
 [ext_resource type="AudioStream" uid="uid://cwn1digytoix8" path="res://Assets/Double-Rainbow-chosic.com_.mp3" id="11_o5yvi"]
 [ext_resource type="PackedScene" uid="uid://dhhnw0usf41g1" path="res://Scenes/Students/student_nav_mesh.tscn" id="12_rku1e"]
 
@@ -22,13 +22,13 @@ vertices = PackedVector2Array(1580.97, 822, 1582.92, 841.07, 1286.97, 843.063, 1
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11, 12), PackedInt32Array(13, 14, 15, 16, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(21, 20, 22, 23), PackedInt32Array(24, 21, 23, 25, 26), PackedInt32Array(17, 27, 28, 13), PackedInt32Array(29, 30, 31, 32, 33, 34), PackedInt32Array(29, 34, 17, 16), PackedInt32Array(35, 14, 13), PackedInt32Array(35, 13, 26, 25), PackedInt32Array(36, 37, 38, 39, 40), PackedInt32Array(41, 42, 43, 36, 40), PackedInt32Array(44, 45, 4, 7), PackedInt32Array(44, 7, 46, 47), PackedInt32Array(47, 46, 42, 41), PackedInt32Array(2, 40, 39, 3), PackedInt32Array(8, 12, 48, 49, 50), PackedInt32Array(51, 50, 49, 24, 26), PackedInt32Array(51, 26, 52, 53), PackedInt32Array(53, 52, 0, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(467, 577, 1835, 574, 1834, 1295, 1034, 1297, 1034, 1266, 970, 1263, 970, 866, 1256, 868, 1254, 843, 948, 850, 955, 1363, 1643, 1372, 1642, 1468, 2023, 1470, 2029, 1670, 1594, 1666, 1597, 1525, 1531, 1521, 1532, 1427, 955, 1429, 957, 1500, 1443, 1499, 1447, 1716, 465, 1716, 466, 1500, 916, 1500, 916, 1432, 434, 1429, 430, 1711, 357, 1713, 354, 823, 316, 823, 319, 1707, -303, 1718, -310, 568, 301, 571, 315, 791, 357, 791, 357, 570, 431, 571, 428, 1370, 919, 1367, 921, 812, 1590, 812, 1594, 851, 1296, 853, 1292, 892, 1607, 887, 1607, 793, 897, 797, 908, 1260, 837, 1262, 840, 1299, 469, 1301)])
 
-[node name="Game" type="Node2D" unique_id=190850860]
+[node name="Game" type="Node2D"]
 script = ExtResource("1_i6g32")
 
-[node name="GroundTiles" parent="." unique_id=973368110 instance=ExtResource("2_ldgsr")]
+[node name="GroundTiles" parent="." instance=ExtResource("2_ldgsr")]
 position = Vector2(992.2, 727.5)
 
-[node name="Player" parent="." unique_id=713654917 instance=ExtResource("2_qxrlw")]
+[node name="Player" parent="." instance=ExtResource("2_qxrlw")]
 unique_name_in_owner = true
 position = Vector2(1930, 1597)
 scale = Vector2(0.5, 0.5)
@@ -38,31 +38,31 @@ stamina_drain_rate = null
 stamina_regen_rate = null
 min_stamina_to_sprint = null
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1736375864]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
 script = ExtResource("3_wowpa")
 max_zoom = Vector2(4, 4)
 
-[node name="BookOnGroundEvent" parent="." unique_id=416910869 instance=ExtResource("3_wrm1d")]
+[node name="BookOnGroundEvent" parent="." instance=ExtResource("3_wrm1d")]
 
-[node name="FoodOnGround" parent="." unique_id=2067730419 instance=ExtResource("9_h4fw4")]
+[node name="FoodOnGround" parent="." instance=ExtResource("9_h4fw4")]
 
-[node name="Students" parent="." unique_id=876331788 instance=ExtResource("6_i6g32")]
+[node name="Students" parent="." instance=ExtResource("6_i6g32")]
 
-[node name="StudentSpawnManager" type="Node2D" parent="." unique_id=2000041881]
+[node name="StudentSpawnManager" type="Node2D" parent="."]
 script = ExtResource("7_1l0tm")
 
-[node name="StudentNavMesh" parent="." unique_id=1112134180 instance=ExtResource("12_rku1e")]
+[node name="StudentNavMesh" parent="." instance=ExtResource("12_rku1e")]
 navigation_polygon = SubResource("NavigationPolygon_ldgsr")
 
-[node name="OtherAreasMesh" type="NavigationRegion2D" parent="StudentNavMesh" unique_id=1987875510]
+[node name="OtherAreasMesh" type="NavigationRegion2D" parent="StudentNavMesh"]
 position = Vector2(-1, 4)
 navigation_polygon = SubResource("NavigationPolygon_o5yvi")
 travel_cost = 5.0
 
-[node name="Fighting" parent="." unique_id=29378816 instance=ExtResource("10_ldgsr")]
+[node name="Fighting" parent="." instance=ExtResource("10_ldgsr")]
 position = Vector2(-72, -25)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=271057325]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_o5yvi")
 autoplay = true
