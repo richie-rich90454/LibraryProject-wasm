@@ -7,4 +7,4 @@ func _ready():
 
 # Custom function to handle start button click
 func _on_options_pressed():
-	pass
+	Global.hPage = 1

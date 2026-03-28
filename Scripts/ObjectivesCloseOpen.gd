@@ -8,6 +8,8 @@ func _on_toggled(toggled_on: bool) -> void:
 	if(toggled_on):
 		$"../MenuBar".hide()
 		$"../ColorRect".hide()
+		self.text = "Open"
 	else:
 		$"../MenuBar".show()
 		$"../ColorRect".show()
+		self.text = "Close"
