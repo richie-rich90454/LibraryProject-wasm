@@ -131,6 +131,7 @@ animations = [{
 size = Vector2(32, 32)
 
 [node name="Player" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_cvnsp")
 
 [node name="Node2D" type="Node2D" parent="."]

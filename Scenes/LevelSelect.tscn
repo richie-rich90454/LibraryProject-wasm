@@ -1,8 +1,10 @@
-[gd_scene load_steps=0 format=3 uid="uid://3c5w6dud362i"]
+[gd_scene load_steps=4 format=3 uid="uid://3c5w6dud362i"]
 
 [ext_resource type="Script" uid="uid://y6rj6ko2qkdo" path="res://Scripts/lvl_1.gd" id="1_chbko"]
+[ext_resource type="Script" uid="uid://chasgfvs7aexq" path="res://Scripts/lvl_2.gd" id="2_fo23m"]
+[ext_resource type="Script" uid="uid://c65ac30p1n1xl" path="res://Scripts/lvl_3.gd" id="3_1cx81"]
 
-[node name="LevelSelect" type="Control" unique_id=718111861]
+[node name="LevelSelect" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Lvl1" type="Button" parent="." unique_id=657140245]
+[node name="Lvl1" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -19,7 +21,7 @@ grow_vertical = 2
 text = "Level 1"
 script = ExtResource("1_chbko")
 
-[node name="Lvl2" type="Button" parent="." unique_id=64109371]
+[node name="Lvl2" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -30,8 +32,9 @@ offset_right = 168.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Level 2"
+script = ExtResource("2_fo23m")
 
-[node name="Lvl3" type="Button" parent="." unique_id=1320899738]
+[node name="Lvl3" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
@@ -42,3 +45,4 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Level 3
 "
+script = ExtResource("3_1cx81")
