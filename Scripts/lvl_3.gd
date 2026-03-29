@@ -8,5 +8,5 @@ func _ready():
 # Custom function to handle start button click
 func _on_start_pressed():
 		# Load and switch to the game scene (replace "res://Game.tscn" with your actual game scene path)
-	var game_scene = load("res://Scenes/level1.tscn")
+	var game_scene = load("res://Scenes/level3.tscn")
 	get_tree().change_scene_to_packed(game_scene)
