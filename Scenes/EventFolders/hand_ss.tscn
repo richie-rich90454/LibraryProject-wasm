@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlj3ocoohgych"]
+[gd_scene load_steps=15 format=3 uid="uid://dlj3ocoohgych"]
 
 [ext_resource type="Script" uid="uid://bipb0f85u8gmp" path="res://Scenes/EventFolders/hand_ss.gd" id="1_6njmw"]
 [ext_resource type="Texture2D" uid="uid://c5sam3eusp50o" path="res://Assets/PlaceHold/2D Top Down Pixel Art Characters/010.png" id="1_kjmrn"]
+[ext_resource type="PackedScene" uid="uid://dannavf646uva" path="res://Scenes/object_marker.tscn" id="3_5crgr"]
+[ext_resource type="Texture2D" uid="uid://d073d47lott2l" path="res://Assets/MapAssets/Placeholders.png" id="3_yvgya"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kjmrn"]
 friction = 0.8
@@ -15,6 +17,26 @@ height = 28.0
 atlas = ExtResource("1_kjmrn")
 region = Rect2(20, 32, 20, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dlqf"]
+atlas = ExtResource("3_yvgya")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hahf0"]
+atlas = ExtResource("3_yvgya")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj3kf"]
+atlas = ExtResource("3_yvgya")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h847p"]
+atlas = ExtResource("3_yvgya")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iach2"]
+atlas = ExtResource("3_yvgya")
+region = Rect2(0, 32, 24, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_cqmd2"]
 animations = [{
 "frames": [{
@@ -24,7 +46,30 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dlqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hahf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj3kf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h847p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iach2")
+}],
+"loop": false,
+"name": &"Sanitize",
+"speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvgya"]
+size = Vector2(16, 20)
 
 [node name="HandSS" type="RigidBody2D"]
 texture_filter = 1
@@ -42,4 +87,15 @@ shape = SubResource("CapsuleShape2D_8skqp")
 position = Vector2(-0.5, 0)
 scale = Vector2(1.05, 1)
 sprite_frames = SubResource("SpriteFrames_cqmd2")
-animation = &"Idle"
+animation = &"Sanitize"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_yvgya")
+
+[node name="ObjectMarker" parent="." instance=ExtResource("3_5crgr")]
+position = Vector2(0, -42)
+scale = Vector2(3, 3)
+on_screen_offset = Vector2(0, -10)
+screen_margin = 10.0
