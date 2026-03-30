@@ -8,6 +8,7 @@ var is_organizing: bool = false
 var animated_sprite: AnimatedSprite2D
 var is_mouse_hovering = false
 var organize_timer: Timer
+var done = 0
 
 func find_player() -> void:
 	player_node = Global.player_node
@@ -29,8 +30,6 @@ func _ready() -> void:
 	area.mouse_exited.connect(func(): is_mouse_hovering = false)
 	area.input_pickable = true
 	
-	randomize_spawn_position()
-	
 	if animated_sprite:
 		play_book_idle_animation()
 		animated_sprite.animation_finished.connect(_on_animation_finished)
@@ -48,15 +47,8 @@ func _process(delta: float) -> void:
 		var distance_to_player = global_position.distance_to(player_node.global_position)
 		var is_near_player = distance_to_player <= interaction_range
 
-		if is_near_player and is_mouse_hovering and Input.is_action_just_pressed("ui_interact"):
+		if is_near_player and is_mouse_hovering and Input.is_action_just_pressed("ui_interact") and done == 0:
 			play_book_organize_animation()
-
-func randomize_spawn_position() -> void:
-	if Global.bookdropcoords.size() > 0:
-		global_position = Global.bookdropcoords.pick_random()
-	print(global_position)
-	if global_position in Global.bookdropcoords:
-		print("yay")
 
 func play_book_idle_animation() -> void:
 	if animated_sprite.animation != "Idle":
@@ -84,4 +76,6 @@ func _on_timer_timeout() -> void:
 func _on_animation_finished() -> void:
 	var anim_name = animated_sprite.animation
 	if anim_name == "Sanitize":
-		queue_free()
+		self.remove_child($ObjectMarker)
+		done = 1
+		animated_sprite.animation = "Idle"

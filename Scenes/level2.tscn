@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bf6vjdjxetmjg"]
 
 [ext_resource type="Script" uid="uid://4nsx3ob1dmg2" path="res://Scripts/game.gd" id="1_mtqcm"]
-[ext_resource type="PackedScene" uid="uid://ck87m2wamedbo" path="res://Scenes/MapLayers.tscn" id="2_mmf1u"]
+[ext_resource type="PackedScene" uid="uid://bqsrvxdclic6h" path="res://Scenes/MapLayers2.tscn" id="2_mtqcm"]
 [ext_resource type="PackedScene" uid="uid://qkge5vvwfp1v" path="res://Scenes/player.tscn" id="3_vn460"]
 [ext_resource type="Script" uid="uid://c38evh7o04jd4" path="res://Scripts/Camera2dZoom.gd" id="4_r8hce"]
 [ext_resource type="PackedScene" uid="uid://coreyppevxw7s" path="res://Scenes/EventFolders/book_on_ground_event.tscn" id="5_ca0bt"]
@@ -25,12 +25,10 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(467, 577, 1835, 574, 18
 [node name="Game" type="Node2D"]
 script = ExtResource("1_mtqcm")
 
-[node name="GroundTiles" parent="." instance=ExtResource("2_mmf1u")]
-position = Vector2(992.2, 727.5)
+[node name="GroundTilesNode" parent="." instance=ExtResource("2_mtqcm")]
 
 [node name="Player" parent="." instance=ExtResource("3_vn460")]
 unique_name_in_owner = true
-position = Vector2(1930, 1597)
 scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
