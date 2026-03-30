@@ -44,7 +44,7 @@ func play_book_organize_animation() -> void:
 	if not is_organizing and fight_Sprite.animation != "StudentChecked":
 		is_organizing = true
 		fight_Sprite.stop()  # Stop idle animation first
-		fight_Sprite.play("StudentChecked")
+		fight_Sprite.play("stopped")
 
 # --------------------------
 # Interaction Detection (Player Input + Proximity + Mouse Hover)
