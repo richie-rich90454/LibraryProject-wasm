@@ -1,3 +1,17 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+#WASM build assets
+LibraryProject.apple-touch-icon.png
+LibraryProject.apple-touch-icon.png.import
+LibraryProject.audio.position.worklet.js
+LibraryProject.audio.worklet.js
+LibraryProject.html
+LibraryProject.icon.png
+LibraryProject.icon.png.import
+LibraryProject.js
+LibraryProject.pck
+LibraryProject.png
+LibraryProject.png.import
+LibraryProject.wasm
