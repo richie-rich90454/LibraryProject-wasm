@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var player_node: CharacterBody2D = null  
 var animated_sprite: AnimatedSprite2D  
-@export var move_speed: float = 50.0
+@export var move_speed: float = 100.0
 var target: Vector2
 @onready var agent = $NavigationAgent2D
 var student_counter = 0

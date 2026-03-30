@@ -1,10 +1,10 @@
-[gd_scene format=4 uid="uid://daupokxccqh08"]
+[gd_scene format=4 uid="uid://bqsrvxdclic6h"]
 
-[ext_resource type="Texture2D" uid="uid://cs27xohjdvppo" path="res://Assets/PlaceHold/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="1_govtv"]
-[ext_resource type="Texture2D" uid="uid://dr62hyrsh8s71" path="res://Assets/PlaceHold/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="2_p8ud4"]
+[ext_resource type="Texture2D" uid="uid://cs27xohjdvppo" path="res://Assets/PlaceHold/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="1_u3uvf"]
+[ext_resource type="Texture2D" uid="uid://dr62hyrsh8s71" path="res://Assets/PlaceHold/Modern_Interiors_Free_v2.2/Modern tiles_Free/Interiors_free/16x16/Room_Builder_free_16x16.png" id="2_ff1v2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_akfw6"]
-texture = ExtResource("1_govtv")
+texture = ExtResource("1_u3uvf")
 1:0/0 = 0
 2:0/0 = 0
 4:0/0 = 0
@@ -1124,7 +1124,7 @@ texture = ExtResource("1_govtv")
 15:88/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6w1re"]
-texture = ExtResource("2_p8ud4")
+texture = ExtResource("2_ff1v2")
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
