@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dy57mk7q2iv7m"]
 
 [ext_resource type="Script" uid="uid://4nsx3ob1dmg2" path="res://Scripts/game.gd" id="1_rqhku"]
-[ext_resource type="PackedScene" uid="uid://ck87m2wamedbo" path="res://Scenes/MapLayers.tscn" id="2_cpkqv"]
+[ext_resource type="PackedScene" uid="uid://ck87m2wamedbo" path="res://Scenes/LibraryOutside.tscn" id="2_cpkqv"]
 [ext_resource type="PackedScene" uid="uid://qkge5vvwfp1v" path="res://Scenes/player.tscn" id="3_d1mwp"]
 [ext_resource type="Script" uid="uid://c38evh7o04jd4" path="res://Scripts/Camera2dZoom.gd" id="4_u1b78"]
 [ext_resource type="PackedScene" uid="uid://dlj3ocoohgych" path="res://Scenes/EventFolders/hand_ss.tscn" id="6_didp7"]
