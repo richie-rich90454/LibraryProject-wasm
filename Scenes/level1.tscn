@@ -30,32 +30,34 @@ autoplay = true
 
 [node name="SanitizeHands" type="Node2D" parent="."]
 
-[node name="HandSS" parent="." instance=ExtResource("6_didp7")]
+[node name="AllEvents" type="Node2D" parent="."]
+
+[node name="HandSS" parent="AllEvents" instance=ExtResource("6_didp7")]
 position = Vector2(1073, 822)
 
-[node name="HandSS4" parent="." instance=ExtResource("6_didp7")]
+[node name="HandSS4" parent="AllEvents" instance=ExtResource("6_didp7")]
 position = Vector2(1046, 822)
 
-[node name="HandSS5" parent="." instance=ExtResource("6_didp7")]
+[node name="HandSS5" parent="AllEvents" instance=ExtResource("6_didp7")]
 position = Vector2(1019, 822)
 
-[node name="HandSS2" parent="." instance=ExtResource("6_didp7")]
+[node name="HandSS2" parent="AllEvents" instance=ExtResource("6_didp7")]
 position = Vector2(1102, 822)
 
-[node name="HandSS3" parent="." instance=ExtResource("6_didp7")]
+[node name="HandSS3" parent="AllEvents" instance=ExtResource("6_didp7")]
 position = Vector2(1130, 822)
 
-[node name="HandSS6" parent="." instance=ExtResource("6_didp7")]
+[node name="HandSS6" parent="AllEvents" instance=ExtResource("6_didp7")]
 position = Vector2(1072, 855)
 
-[node name="HandSS7" parent="." instance=ExtResource("6_didp7")]
+[node name="HandSS7" parent="AllEvents" instance=ExtResource("6_didp7")]
 position = Vector2(1044, 855)
 
-[node name="HandSS8" parent="." instance=ExtResource("6_didp7")]
+[node name="HandSS8" parent="AllEvents" instance=ExtResource("6_didp7")]
 position = Vector2(1017, 855)
 
-[node name="HandSS9" parent="." instance=ExtResource("6_didp7")]
+[node name="HandSS9" parent="AllEvents" instance=ExtResource("6_didp7")]
 position = Vector2(1100, 855)
 
-[node name="HandSS10" parent="." instance=ExtResource("6_didp7")]
+[node name="HandSS10" parent="AllEvents" instance=ExtResource("6_didp7")]
 position = Vector2(1128, 855)

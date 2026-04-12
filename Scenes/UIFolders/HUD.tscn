@@ -1,26 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsbp7nmgsjuit"]
+[gd_scene load_steps=8 format=3 uid="uid://bsbp7nmgsjuit"]
 
 [ext_resource type="Script" path="res://Scripts/ObjectivesCloseOpen.gd" id="1_khrgo"]
-[ext_resource type="Script" path="res://Scripts/score_count.gd" id="1_sd512"]
 [ext_resource type="Script" path="res://Scripts/SettingsButton.gd" id="1_xqwax"]
 [ext_resource type="Script" uid="uid://cpjgb7cbh7xcr" path="res://Scripts/right.gd" id="2_vagh1"]
+[ext_resource type="Script" uid="uid://c5nu66km0vs5s" path="res://Scripts/menu_bar.gd" id="2_xqwax"]
 [ext_resource type="Script" uid="uid://cgbiuyvxleco3" path="res://Scripts/up.gd" id="3_xhb6w"]
 [ext_resource type="Script" uid="uid://bga1pqbjfedcn" path="res://Scripts/left.gd" id="4_xhb6w"]
 [ext_resource type="Script" uid="uid://ctkob60p5mcsd" path="res://Scripts/down.gd" id="5_ydgmi"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_entsu"]
-bg_color = Color(0.378666, 0.643731, 0.733326, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
 [node name="Hud" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchor_left = -0.483
 anchor_top = -0.481
@@ -35,17 +24,19 @@ grow_vertical = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 695.0
-offset_top = 39.0
-offset_right = 768.0
-offset_bottom = 115.0
+offset_left = 63.0
+offset_top = 65.0
+offset_right = 135.0
+offset_bottom = 137.0
 text = "Options"
 script = ExtResource("1_xqwax")
 
 [node name="ObjectiveBar" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 47.0
+offset_bottom = 41.0
 
 [node name="ColorRect" type="ColorRect" parent="ObjectiveBar"]
 layout_mode = 0
@@ -63,6 +54,7 @@ offset_left = 807.0
 offset_top = 61.0
 offset_right = 1207.0
 offset_bottom = 329.0
+script = ExtResource("2_xqwax")
 
 [node name="OBJ label" type="RichTextLabel" parent="ObjectiveBar/MenuBar"]
 layout_mode = 0
@@ -77,43 +69,68 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -158.5
-offset_right = 158.5
-offset_bottom = 40.0
+offset_left = -192.0
+offset_top = 4.0
+offset_right = 125.0
+offset_bottom = 44.0
+grow_horizontal = 2
+text = " - Clean Up the Sandwiches"
+fit_content = true
+
+[node name="Objective 2" type="RichTextLabel" parent="ObjectiveBar/MenuBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_top = 28.0
+offset_right = 291.0
+offset_bottom = 68.0
+grow_horizontal = 2
+text = " - Clean Up the Sandwiches"
+fit_content = true
+
+[node name="Objective 3" type="RichTextLabel" parent="ObjectiveBar/MenuBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_top = 52.0
+offset_right = 125.0
+offset_bottom = 92.0
+grow_horizontal = 2
+text = " - Clean Up the Sandwiches"
+fit_content = true
+
+[node name="Objective 4" type="RichTextLabel" parent="ObjectiveBar/MenuBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -192.0
+offset_top = 76.0
+offset_right = 125.0
+offset_bottom = 116.0
 grow_horizontal = 2
 text = " - Clean Up the Sandwiches"
 fit_content = true
 
 [node name="CheckButton" type="CheckButton" parent="ObjectiveBar"]
 layout_mode = 0
-offset_left = 1094.0
+offset_left = 1097.0
 offset_top = 10.0
-offset_right = 1205.0
+offset_right = 1208.0
 offset_bottom = 83.0
 text = "Close
 
 "
 script = ExtResource("1_khrgo")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 424.0
-offset_bottom = 111.0
+[node name="UserOnScreenControl" type="Node2D" parent="."]
+position = Vector2(10, 10)
 
-[node name="Score_count" type="Label" parent="MarginContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_entsu")
-text = "  Score: "
-script = ExtResource("1_sd512")
-metadata/_edit_use_anchors_ = true
-
-[node name="UserOnScreenControl" type="Node2D" parent="MarginContainer"]
-
-[node name="Right" type="Button" parent="MarginContainer/UserOnScreenControl"]
+[node name="Right" type="Button" parent="UserOnScreenControl"]
 offset_left = 1006.0
 offset_top = 471.0
 offset_right = 1073.0
@@ -121,7 +138,7 @@ offset_bottom = 535.0
 script = ExtResource("2_vagh1")
 metadata/_edit_use_anchors_ = true
 
-[node name="Up" type="Button" parent="MarginContainer/UserOnScreenControl"]
+[node name="Up" type="Button" parent="UserOnScreenControl"]
 offset_left = 968.0
 offset_top = 404.0
 offset_right = 1035.0
@@ -129,7 +146,7 @@ offset_bottom = 468.0
 script = ExtResource("3_xhb6w")
 metadata/_edit_use_anchors_ = true
 
-[node name="Left" type="Button" parent="MarginContainer/UserOnScreenControl"]
+[node name="Left" type="Button" parent="UserOnScreenControl"]
 offset_left = 930.0
 offset_top = 471.0
 offset_right = 997.0
@@ -137,7 +154,7 @@ offset_bottom = 535.0
 script = ExtResource("4_xhb6w")
 metadata/_edit_use_anchors_ = true
 
-[node name="Down" type="Button" parent="MarginContainer/UserOnScreenControl"]
+[node name="Down" type="Button" parent="UserOnScreenControl"]
 offset_left = 969.0
 offset_top = 538.0
 offset_right = 1036.0

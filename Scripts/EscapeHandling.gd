@@ -1,5 +1,5 @@
 extends Node2D
-@onready var pause_menu = $"../CanvasLayer/Options Menu" # Reference to your PauseMenu node
+@onready var pause_menu = $"../CanvasLayer/Options Menu"
 
 func _ready() -> void:
 	pause_menu.hide()

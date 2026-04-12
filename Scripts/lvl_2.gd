@@ -8,5 +8,9 @@ func _ready():
 # Custom function to handle start button click
 func _on_start_pressed():
 		# Load and switch to the game scene (replace "res://Game.tscn" with your actual game scene path)
-	var game_scene = load("res://Scenes/level2.tscn")
-	get_tree().change_scene_to_packed(game_scene)
+	if(Global.lvl1done):
+		var game_scene = load("res://Scenes/level2.tscn")
+		get_tree().change_scene_to_packed(game_scene)
+	else:
+		Global.showRules = 1
+		Global.givenText = "Finish Level 1 First to Proceed to Level 2!"

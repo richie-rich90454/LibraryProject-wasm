@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bkjxucs3g4vej"]
 
-[ext_resource type="Script" uid="uid://4nsx3ob1dmg2" path="res://Scripts/game.gd" id="1_h6p24"]
+[ext_resource type="Script" uid="uid://03he4gplhk7e" path="res://Scripts/level_3.gd" id="1_h6p24"]
 [ext_resource type="PackedScene" uid="uid://daupokxccqh08" path="res://Scenes/CheckoutArea.tscn" id="2_h6p24"]
 [ext_resource type="PackedScene" uid="uid://qkge5vvwfp1v" path="res://Scenes/player.tscn" id="3_vwkqt"]
 [ext_resource type="Script" uid="uid://c38evh7o04jd4" path="res://Scripts/Camera2dZoom.gd" id="4_fpsp3"]
@@ -30,11 +30,6 @@ script = ExtResource("1_h6p24")
 [node name="Player" parent="." instance=ExtResource("3_vwkqt")]
 unique_name_in_owner = true
 scale = Vector2(0.5, 0.5)
-move_speed = null
-max_stamina = null
-stamina_drain_rate = null
-stamina_regen_rate = null
-min_stamina_to_sprint = null
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true

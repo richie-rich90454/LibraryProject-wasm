@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://qkge5vvwfp1v"]
 
 [ext_resource type="Script" uid="uid://ccju6wsj5kbnj" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Script" path="res://Scripts/EscapeHandling.gd" id="2_3smsa"]
+[ext_resource type="Script" uid="uid://uujdqvclervr" path="res://Scripts/EscapeHandling.gd" id="2_3smsa"]
 [ext_resource type="Texture2D" uid="uid://cliqw8lheh855" path="res://Assets/PlaceHold/2D Top Down Pixel Art Characters/033.png" id="2_fkybt"]
 [ext_resource type="PackedScene" uid="uid://bsbp7nmgsjuit" path="res://Scenes/UIFolders/HUD.tscn" id="3_6t5aa"]
 [ext_resource type="PackedScene" uid="uid://b2b5dvlqiob0v" path="res://Scenes/UIFolders/rule_descriptions.tscn" id="4_fkybt"]
@@ -128,7 +128,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3adp"]
-size = Vector2(32, 32)
+size = Vector2(32, 26)
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -145,7 +145,7 @@ sprite_frames = SubResource("SpriteFrames_cgts5")
 animation = &"MoveUp"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 29)
+position = Vector2(0, 32)
 shape = SubResource("RectangleShape2D_a3adp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
