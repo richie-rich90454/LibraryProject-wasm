@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Rejoin.gd" id="3_jvecm"]
 
 [node name="Options Menu" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

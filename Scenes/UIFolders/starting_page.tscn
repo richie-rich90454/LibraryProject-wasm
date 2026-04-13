@@ -23,6 +23,7 @@ shadow_color = Color(0.424762, 0.606788, 1, 0.6)
 shadow_size = 4
 
 [node name="StartingPage" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,6 +33,7 @@ grow_vertical = 2
 script = ExtResource("1_8h5le")
 
 [node name="Panel" type="Panel" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,6 +57,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Start" type="Button" parent="VBoxContainer"]
+texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 46

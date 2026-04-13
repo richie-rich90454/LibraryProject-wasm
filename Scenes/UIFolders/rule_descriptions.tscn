@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2b5dvlqiob0v"]
+[gd_scene load_steps=11 format=3 uid="uid://b2b5dvlqiob0v"]
 
 [ext_resource type="Script" uid="uid://byhm4f4he1880" path="res://Scripts/rich_text_label.gd" id="1_ratgk"]
+[ext_resource type="Texture2D" uid="uid://b13okt8li5mkc" path="res://Assets/Posters/Backpacks.png" id="2_ii42a"]
+[ext_resource type="Texture2D" uid="uid://d3oh4xy5yx3ri" path="res://Assets/Posters/Fighting.png" id="3_o7qfe"]
+[ext_resource type="Texture2D" uid="uid://bn8wn3yhixsd6" path="res://Assets/Posters/Running.png" id="4_lqlmv"]
+[ext_resource type="Texture2D" uid="uid://c1xiub1343xtj" path="res://Assets/Posters/Chairs.png" id="5_tb2bs"]
+[ext_resource type="Texture2D" uid="uid://bp6nk1v6108mq" path="res://Assets/Posters/Books.png" id="6_2n5ao"]
+[ext_resource type="Texture2D" uid="uid://ekbkq1danpkj" path="res://Assets/Posters/Food.png" id="7_x32ya"]
+[ext_resource type="Texture2D" uid="uid://d0mcturunyet0" path="res://Assets/Posters/Checkout.png" id="8_wiy3b"]
+[ext_resource type="Texture2D" uid="uid://dnwf6nr11pxxs" path="res://Assets/Posters/Sanitize.png" id="9_ixt2p"]
+[ext_resource type="Texture2D" uid="uid://b3ohcao0xuo3b" path="res://Assets/Posters/Noises.png" id="10_ak2vh"]
 
 [node name="RuleDescriptions" type="Control"]
 process_mode = 3
@@ -11,6 +20,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.132
+anchor_bottom = 0.284
+offset_left = 393.0
+offset_top = 10.0
+offset_right = 589.04
+offset_bottom = 488.52
+color = Color(0.247059, 0.282353, 0.352941, 1)
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -18,11 +38,110 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -187.0
-offset_top = -312.0
-offset_right = 187.0
-offset_bottom = 312.0
+offset_left = -236.0
+offset_top = -332.0
+offset_right = 138.0
+offset_bottom = 292.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "This is so sad"
 script = ExtResource("1_ratgk")
+
+[node name="Backpack" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 408.0
+offset_top = 232.0
+offset_right = 744.0
+offset_bottom = 680.0
+texture = ExtResource("2_ii42a")
+expand_mode = 1
+
+[node name="Fighting" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 408.0
+offset_top = 232.0
+offset_right = 744.0
+offset_bottom = 680.0
+texture = ExtResource("3_o7qfe")
+expand_mode = 1
+
+[node name="Running" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 408.0
+offset_top = 232.0
+offset_right = 744.0
+offset_bottom = 680.0
+texture = ExtResource("4_lqlmv")
+expand_mode = 1
+
+[node name="Chairs" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 408.0
+offset_top = 232.0
+offset_right = 744.0
+offset_bottom = 680.0
+texture = ExtResource("5_tb2bs")
+expand_mode = 1
+
+[node name="Books" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 408.0
+offset_top = 232.0
+offset_right = 744.0
+offset_bottom = 680.0
+texture = ExtResource("6_2n5ao")
+expand_mode = 1
+
+[node name="Food" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 408.0
+offset_top = 232.0
+offset_right = 744.0
+offset_bottom = 680.0
+texture = ExtResource("7_x32ya")
+expand_mode = 1
+
+[node name="Checkout" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 408.0
+offset_top = 232.0
+offset_right = 744.0
+offset_bottom = 680.0
+texture = ExtResource("8_wiy3b")
+expand_mode = 1
+
+[node name="Sanitize" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 408.0
+offset_top = 232.0
+offset_right = 744.0
+offset_bottom = 680.0
+texture = ExtResource("9_ixt2p")
+expand_mode = 1
+
+[node name="Noise" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 408.0
+offset_top = 232.0
+offset_right = 744.0
+offset_bottom = 680.0
+texture = ExtResource("10_ak2vh")
+expand_mode = 1
