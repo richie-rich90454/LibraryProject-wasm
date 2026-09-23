@@ -1,7 +1,8 @@
 extends Area2D
 
-@export var interaction_text: String = "Stowing backpack..."
+@export var interaction_text: String = "Putting bag away..."
 @export var interaction_duration: float = 1.75
+@export var interaction_range: float = 100.0
 var is_organizing: bool = false
 var interaction_elapsed: float = 0.0
 var is_mouse_hovering: bool = false
@@ -34,8 +35,9 @@ func _process(delta: float) -> void:
 	if has_node("ObjectMarker"):
 		$ObjectMarker.visible = Global.player_has_backpack and not done
 
-	if not done and Global.player_has_backpack:
-		if is_mouse_hovering and (Input.is_action_just_pressed("ui_interact") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)) and not Global.is_interacting:
+	if not done and Global.player_has_backpack and Global.player_node:
+		var is_near_player := global_position.distance_to(Global.player_node.global_position) <= interaction_range
+		if is_near_player and is_mouse_hovering and (Input.is_action_just_pressed("ui_interact") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)) and not Global.is_interacting:
 			start_stow()
 
 func start_stow() -> void:
@@ -59,13 +61,13 @@ func _complete_stow() -> void:
 		player.remove_backpack()
 
 	# Complete the objective
-	if Global.firstBackpack == 0:
-		Global.firstBackpack = 1
+	Global.request_rule("backpack")
 	Global.events_done += 1
 	Global.cubby_done += 1
 	if Global.cubby_done >= Global.cubby_total:
 		Global.objectives_done[1] = true
 	Global.task_completed.emit(global_position)
+	Global.award_task(self, "bag")
 
 	# Hide marker and switch to filled animation
 	if has_node("ObjectMarker"):

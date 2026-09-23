@@ -46,7 +46,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(1, 0.95, 0.7, 1)
 theme_override_font_sizes/normal_font_size = 24
-text = "This is so sad"
+text = "Good choice!"
 script = ExtResource("1_ratgk")
 
 [node name="Backpack" type="TextureRect" parent="."]

@@ -4,8 +4,6 @@ var player_node: CharacterBody2D = null
 @export var interaction_range: float = 100.0
 @export var interaction_text: String = "Cleaning up food..."
 @export var interaction_duration: float = 1.75
-@export var map_min: Vector2 = Vector2(-800, -800)
-@export var map_max: Vector2 = Vector2(800, 800)
 var is_organizing: bool = false
 var interaction_elapsed: float = 0.0
 var animated_sprite: AnimatedSprite2D
@@ -27,13 +25,6 @@ func _ready() -> void:
 
 	if animated_sprite:
 		play_book_idle_animation()
-
-func randomize_spawn_position() -> void:
-	if Global.bookdropcoords.size() > 0:
-		global_position = Global.bookdropcoords.pick_random()
-	print(global_position)
-	if global_position in Global.bookdropcoords:
-		print("yay")
 
 func play_book_idle_animation() -> void:
 	if animated_sprite.animation != "BookIdle":
@@ -72,23 +63,19 @@ func start_interaction() -> void:
 	interaction_elapsed = 0.0
 	Global.is_interacting = true
 
-	Global.events_done += 1
-	Global.score += 1
-	if Global.score < 0:
-		Global.score = 0
-	print("Food cleaned!")
-
 	Global.interaction_started.emit(interaction_text)
 
 func _complete_interaction() -> void:
 	is_organizing = false
 	interaction_elapsed = 0.0
 	Global.is_interacting = false
-	Global.first_food = 1
 	Global.interaction_finished.emit()
 	Global.task_completed.emit(global_position)
 
+	Global.events_done += 1
 	Global.food_done += 1
+	Global.request_rule("food")
+	Global.award_task(self, "food")
 	if Global.food_done >= Global.food_total:
 		Global.objectives_done[3] = true
 	queue_free()

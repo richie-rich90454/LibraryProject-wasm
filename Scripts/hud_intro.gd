@@ -2,15 +2,14 @@ extends Control
 # Level-entry animation, played once per level (the HUD is instanced with the
 # player in every level scene):
 # - the screen fades in from black
-# - the objectives bar, options button, movement buttons and minimap swing in
+# - the jobs, score, and movement buttons swing in
 #   from the right with a bounded, bouncy settle (same feel as the starting page).
 
 func _ready() -> void:
 	_fade_from_black()
 	_swing_in_from_right($ObjectiveBar, 0.0)
-	_swing_in_from_right($Button, 0.05)
-	_swing_in_from_right($Minimap, 0.1)
-	_swing_in_from_right($UserOnScreenControl, 0.15)
+	_swing_in_from_right($ScoreLabel, 0.05)
+	_swing_in_from_right($UserOnScreenControl, 0.1)
 
 
 func _fade_from_black() -> void:

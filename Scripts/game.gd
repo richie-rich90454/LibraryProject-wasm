@@ -12,13 +12,12 @@ func _ready():
 	Global.objectives_done = [false, false, false, false]
 	Global.objectives_revealed = [true, true, false, false]
 	Global.level_transitioning = false
-	Global.firstEnter = 0
 	Global.events_total = Global.sanitize_total + Global.cubby_total + Global.fighting_total + Global.enter_total
 
 func _process(delta: float) -> void:
 	if _transitioning:
 		return
-	if not Global.level_transitioning and Global.events_done >= Global.events_total and Global.events_total > 0:
+	if not Global.level_transitioning and not Global.is_interacting and not Global.has_pending_quiz() and Global.events_done >= Global.events_total and Global.events_total > 0:
 		_transitioning = true
 		Global.lvl1done = 1
 		await get_tree().create_timer(0.5).timeout

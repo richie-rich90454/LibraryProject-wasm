@@ -1,18 +1,10 @@
 extends CharacterBody2D
 
 @export var move_speed: float = 100.0
-@export var sprint_speed: float = move_speed*1.5
-@export var max_stamina: float = 100.0
-@export var stamina_drain_rate: float = 20.0
-@export var stamina_regen_rate: float = 15.0
-@export var min_stamina_to_sprint: float = 5.0
 
 @onready var animations: AnimatedSprite2D = $Animations
 
 var movement_dir: Vector2 = Vector2.ZERO
-var current_stamina: float = max_stamina
-var is_sprinting: bool = false
-var can_sprint: bool = true
 var current_speed: float = move_speed
 var carried_backpack: AnimatedSprite2D = null
 

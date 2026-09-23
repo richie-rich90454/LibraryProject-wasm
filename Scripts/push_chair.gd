@@ -11,7 +11,7 @@ func _ready() -> void:
 	# look. Remember the scene-configured animation first and restore it.
 	_initial_animation = chair_animation if chair_animation != "" else String($StudentLook.animation)
 	super._ready()
-	interaction_text = "Pushing in chairs..."
+	interaction_text = "Pushing in a chair..."
 	if animated_sprite:
 		animated_sprite.play(_initial_animation)
 
@@ -29,7 +29,7 @@ func _complete_interaction() -> void:
 				animated_sprite.play("Idle")
 
 func firsttime():
-	Global.firstChairs = 1
+	Global.request_rule("chairs")
 	Global.events_done += 1
 	Global.chairs_done += 1
 	if Global.chairs_done >= Global.chairs_total:

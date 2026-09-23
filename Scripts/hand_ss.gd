@@ -2,10 +2,8 @@ extends RigidBody2D
 
 var player_node: CharacterBody2D = null
 @export var interaction_range: float = 100.0
-@export var interaction_text: String = "Sanitizing hands..."
+@export var interaction_text: String = "Helping..."
 @export var interaction_duration: float = 1.75
-@export var map_min: Vector2 = Vector2(-800, -800)
-@export var map_max: Vector2 = Vector2(800, 800)
 var is_organizing: bool = false
 var interaction_elapsed: float = 0.0
 var animated_sprite: AnimatedSprite2D
@@ -82,11 +80,6 @@ func start_interaction() -> void:
 	interaction_elapsed = 0.0
 	Global.is_interacting = true
 
-	Global.score += 1
-	if Global.score < 0:
-		Global.score = 0
-	print("Interaction started!")
-
 	Global.interaction_started.emit(interaction_text)
 
 func _complete_interaction() -> void:
@@ -97,6 +90,7 @@ func _complete_interaction() -> void:
 	Global.task_completed.emit(global_position)
 
 	firsttime()
+	Global.award_task(self, str(get_script().resource_path))
 	if has_node("ObjectMarker"):
 		self.remove_child($ObjectMarker)
 	done = 1

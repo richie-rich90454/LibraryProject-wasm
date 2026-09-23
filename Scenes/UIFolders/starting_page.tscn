@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://biyw64ud7felm" path="res://Assets/UIAsets/Library_bg.png" id="1_dujba"]
 [ext_resource type="Script" uid="uid://di30eij0dukt3" path="res://Scripts/start.gd" id="3_t7jmd"]
 [ext_resource type="Texture2D" uid="uid://bd002pol5xo1t" path="res://Assets/GUI-HUDASSETS/PNG/SpriteSheet.png" id="3_xaxdf"]
-[ext_resource type="Script" uid="uid://d0eljxghj7epg" path="res://Scripts/options.gd" id="4_gff81"]
 [ext_resource type="Script" uid="uid://d0kicl1jyeku2" path="res://Scripts/quit.gd" id="5_50rtn"]
 [ext_resource type="AudioStream" uid="uid://b3cmvken0fpwi" path="res://Assets/Music/Menu Music.mp3" id="6_music"]
 
@@ -24,19 +23,6 @@ modulate_color = Color(0.55, 0.55, 0.55, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q4x4n"]
 texture = ExtResource("3_xaxdf")
 region_rect = Rect2(20.2307, 667.769, 434.564, 103.359)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dujba"]
-bg_color = Color(0.48797, 0.555005, 0.992446, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_color = Color(0.424762, 0.606788, 1, 0.6)
-shadow_size = 4
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p4as7"]
 texture = ExtResource("3_xaxdf")
@@ -87,18 +73,8 @@ theme_override_font_sizes/font_size = 46
 theme_override_styles/hover = SubResource("StyleBoxTexture_menu_hover")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_pressed")
 theme_override_styles/normal = SubResource("StyleBoxTexture_q4x4n")
-text = "Start Game"
+text = "Play"
 script = ExtResource("3_t7jmd")
-
-[node name="Options" type="Button" parent="VBoxContainer"]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 46
-theme_override_styles/normal = SubResource("StyleBoxFlat_dujba")
-text = "Options
-"
-script = ExtResource("4_gff81")
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -109,7 +85,7 @@ theme_override_font_sizes/font_size = 46
 theme_override_styles/hover = SubResource("StyleBoxTexture_menu_hover")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_menu_pressed")
 theme_override_styles/normal = SubResource("StyleBoxTexture_p4as7")
-text = "Quit Game"
+text = "Quit"
 script = ExtResource("5_50rtn")
 
 [node name="Title" type="Label" parent="."]

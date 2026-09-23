@@ -1,7 +1,8 @@
 extends Area2D
 
-@export var interaction_text: String = "Letting kids leave..."
+@export var interaction_text: String = "Opening the door..."
 @export var interaction_duration: float = 1.75
+@export var interaction_range: float = 100.0
 var is_organizing: bool = false
 var interaction_elapsed: float = 0.0
 var is_mouse_hovering: bool = false
@@ -33,7 +34,7 @@ func _process(delta: float) -> void:
 		return
 
 	# Start the finale cutscene once the interaction completed
-	if not cutscene_started and Global.firstLeave == 1:
+	if not cutscene_started and done and not Global.has_pending_quiz():
 		cutscene_started = true
 		_play_cutscene()
 		return
@@ -46,7 +47,8 @@ func _process(delta: float) -> void:
 		if has_node("ObjectMarker"):
 			$ObjectMarker.visible = gate_open
 
-		if gate_open and is_mouse_hovering and (Input.is_action_just_pressed("ui_interact") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)) and not Global.is_interacting and not Global.player_has_backpack:
+		var is_near_player := Global.player_node and global_position.distance_to(Global.player_node.global_position) <= interaction_range
+		if gate_open and is_near_player and is_mouse_hovering and (Input.is_action_just_pressed("ui_interact") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)) and not Global.is_interacting and not Global.player_has_backpack:
 			start_interaction()
 
 func start_interaction() -> void:
@@ -68,11 +70,11 @@ func _complete_interaction() -> void:
 	# Block the level's auto-transition so the cutscene controls the exit
 	Global.level_transitioning = true
 
-	if Global.firstLeave == 0:
-		Global.firstLeave = 1
 	Global.leave_done += 1
 	Global.events_done += 1
 	Global.objectives_done[3] = true
+	Global.request_rule("leave")
+	Global.award_task(self, "leave")
 
 	if has_node("ObjectMarker"):
 		$ObjectMarker.visible = false

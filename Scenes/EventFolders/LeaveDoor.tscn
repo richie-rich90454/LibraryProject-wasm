@@ -1,34 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://cleavedoors2"]
+[gd_scene load_steps=6 format=3 uid="uid://cleavedoors2"]
 
 [ext_resource type="Script" uid="uid://cleavedoors1" path="res://Scripts/leave_door.gd" id="1_ed"]
-[ext_resource type="Texture2D" uid="uid://bg0s17vvvrigj" path="res://Assets/Button.png" id="2_jjmid"]
+[ext_resource type="Texture2D" uid="uid://bdvfiqfdd2ltp" path="res://Assets/Generated/library_security_gate.png" id="2_gate"]
 [ext_resource type="PackedScene" uid="uid://dannavf646uva" path="res://Scenes/object_marker.tscn" id="3_ed"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jupph"]
-atlas = ExtResource("2_jjmid")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xd0ti"]
-atlas = ExtResource("2_jjmid")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sljd4"]
-atlas = ExtResource("2_jjmid")
-region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8ftwb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jupph")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xd0ti")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sljd4")
+"texture": ExtResource("2_gate")
 }],
-"loop": true,
+"loop": false,
 "name": &"ButtonDoor",
 "speed": 5.0
 }]

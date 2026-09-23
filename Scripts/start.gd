@@ -7,6 +7,7 @@ func _ready():
 
 # Custom function to handle start button click
 func _on_start_pressed():
+	Global.start_new_game()
 	# Play the swing-out + fade before switching scenes.
 	var page = get_tree().current_scene
 	if page and page.has_method("play_exit"):

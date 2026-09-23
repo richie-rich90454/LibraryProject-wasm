@@ -1,24 +1,22 @@
-[gd_scene load_steps=24 format=3 uid="uid://bsbp7nmgsjuit"]
+[gd_scene load_steps=25 format=3 uid="uid://bsbp7nmgsjuit"]
 
 [ext_resource type="Script" uid="uid://dc1o3qrrs1jyg" path="res://Scripts/ObjectivesCloseOpen.gd" id="1_khrgo"]
-[ext_resource type="Script" path="res://Scripts/SettingsButton.gd" id="1_xqwax"]
+[ext_resource type="Script" path="res://Scripts/score_count.gd" id="1_score"]
 [ext_resource type="Script" uid="uid://cpjgb7cbh7xcr" path="res://Scripts/right.gd" id="2_vagh1"]
 [ext_resource type="Script" uid="uid://c5nu66km0vs5s" path="res://Scripts/menu_bar.gd" id="2_xqwax"]
 [ext_resource type="Script" uid="uid://cgbiuyvxleco3" path="res://Scripts/up.gd" id="3_xhb6w"]
 [ext_resource type="Texture2D" uid="uid://6tv4can7b4ly" path="res://Assets/GUI-HUDASSETS/UI_Flat_Frame01a.png" id="4_oqorx"]
 [ext_resource type="Script" uid="uid://bga1pqbjfedcn" path="res://Scripts/left.gd" id="4_xhb6w"]
 [ext_resource type="Script" uid="uid://ctkob60p5mcsd" path="res://Scripts/down.gd" id="5_ydgmi"]
-[ext_resource type="PackedScene" uid="uid://minimap001" path="res://Scenes/UIFolders/minimap.tscn" id="6_minimap"]
 [ext_resource type="Script" uid="uid://by5kn2wxsyf27" path="res://Scripts/InteractionBar.gd" id="9_6yr14"]
-[ext_resource type="Script" uid="uid://fbv4gw7hp0yc" path="res://Scripts/debug_finish.gd" id="10_dbg"]
 [ext_resource type="Texture2D" uid="uid://ds6s2ucrptois" path="res://Assets/GUI-HUDASSETS/UI_Flat_Button02a_1.png" id="10_dol0d"]
 [ext_resource type="Texture2D" uid="uid://drtyxuxxqy3jl" path="res://Assets/GUI-HUDASSETS/UI_Flat_Button02a_3.png" id="11_llluk"]
 [ext_resource type="Texture2D" uid="uid://fjpx7dyjpll" path="res://Assets/GUI-HUDASSETS/UI_Flat_ToggleOff03a.png" id="15_toggle_off"]
 [ext_resource type="Script" uid="uid://cj0k3ekc8u14" path="res://Scripts/hud_intro.gd" id="16_hud_intro"]
 [ext_resource type="Texture2D" uid="uid://j20lxgadflrf" path="res://Assets/GUI-HUDASSETS/Arrow.png" id="17_arrow"]
 [ext_resource type="Texture2D" uid="uid://bdfrcfh06m8oj" path="res://Assets/GUI-HUDASSETS/InteractionBar.png" id="18_llluk"]
-[ext_resource type="Texture2D" uid="uid://b78lwmh6jqg2h" path="res://Assets/GUI-HUDASSETS/Settings Wheel.png" id="18_wheel"]
 [ext_resource type="Texture2D" uid="uid://ck4ewbyeg1mn4" path="res://Assets/GUI-HUDASSETS/TheRealBar.png" id="19_38f7l"]
+[ext_resource type="Script" path="res://Scripts/debug_menu.gd" id="20_debug"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lu1dj"]
 texture = ExtResource("11_llluk")
@@ -47,34 +45,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("16_hud_intro")
 
-[node name="Button" type="Button" parent="."]
+[node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 601.0
-offset_right = 103.0
-offset_bottom = 673.0
-theme_override_styles/hover = SubResource("StyleBoxTexture_lu1dj")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_w3wpm")
-theme_override_styles/normal = SubResource("StyleBoxTexture_lu1dj")
-script = ExtResource("1_xqwax")
-
-[node name="Wheel" type="TextureRect" parent="Button"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 7.0
-offset_right = 59.0
-offset_bottom = 55.0
-mouse_filter = 2
-texture = ExtResource("18_wheel")
-
-[node name="DebugFinish" type="Button" parent="."]
-layout_mode = 0
-offset_left = 110.0
-offset_top = 601.0
-offset_right = 230.0
-offset_bottom = 673.0
-text = "Debug Finish"
-script = ExtResource("10_dbg")
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 260.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 24
+text = "Score: 0"
+script = ExtResource("1_score")
 
 [node name="ObjectiveBar" type="Control" parent="."]
 anchors_preset = 0
@@ -115,7 +98,7 @@ offset_top = -27.0
 offset_right = 414.0
 offset_bottom = -4.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Objectives:"
+text = "My Jobs:"
 fit_content = true
 
 [node name="ObjectivesBox" type="VBoxContainer" parent="ObjectiveBar/MenuBar"]
@@ -128,7 +111,7 @@ offset_bottom = 268.0
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = " - Clean Up the Sandwiches"
+text = ""
 fit_content = true
 autowrap_mode = 2
 
@@ -136,7 +119,7 @@ autowrap_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = " - Clean Up the Sandwiches"
+text = ""
 fit_content = true
 autowrap_mode = 2
 
@@ -144,7 +127,7 @@ autowrap_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = " - Clean Up the Sandwiches"
+text = ""
 fit_content = true
 autowrap_mode = 2
 
@@ -152,7 +135,7 @@ autowrap_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = " - Clean Up the Sandwiches"
+text = ""
 fit_content = true
 autowrap_mode = 2
 
@@ -256,18 +239,6 @@ pivot_offset = Vector2(24, 24)
 mouse_filter = 2
 texture = ExtResource("17_arrow")
 
-[node name="Minimap" parent="." instance=ExtResource("6_minimap")]
-visible = false
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1.0
-offset_top = 1.0
-offset_right = 329.0
-offset_bottom = 211.0
-grow_horizontal = 0
-
 [node name="InteractionBar" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 311.0
@@ -301,3 +272,53 @@ offset_bottom = 57.0
 theme_override_styles/background = SubResource("StyleBoxTexture_argla")
 theme_override_styles/fill = SubResource("StyleBoxFlat_w3wpm")
 show_percentage = false
+
+[node name="DebugMenu" type="Panel" parent="."]
+visible = false
+process_mode = 3
+z_index = 5000
+layout_mode = 0
+offset_left = 372.0
+offset_top = 115.0
+offset_right = 652.0
+offset_bottom = 455.0
+script = ExtResource("20_debug")
+
+[node name="VBox" type="VBoxContainer" parent="DebugMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = -24.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="DebugMenu/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Debug"
+horizontal_alignment = 1
+
+[node name="FinishLevel" type="Button" parent="DebugMenu/VBox"]
+layout_mode = 2
+text = "Finish Level"
+
+[node name="Level1" type="Button" parent="DebugMenu/VBox"]
+layout_mode = 2
+text = "Go to Level 1"
+
+[node name="Level2" type="Button" parent="DebugMenu/VBox"]
+layout_mode = 2
+text = "Go to Level 2"
+
+[node name="Level3" type="Button" parent="DebugMenu/VBox"]
+layout_mode = 2
+text = "Go to Level 3"
+
+[node name="Close" type="Button" parent="DebugMenu/VBox"]
+layout_mode = 2
+text = "Close"

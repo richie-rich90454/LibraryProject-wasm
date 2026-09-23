@@ -12,12 +12,13 @@ func _ready() -> void:
 
 	var next_btn := $Panel/VBoxContainer/NextLevelButton
 	if next_level > 0:
-		next_btn.text = "Next Level: Level " + str(next_level)
+		next_btn.text = "Go to Level " + str(next_level)
 		next_btn.pressed.connect(_on_next_pressed.bind(next_level))
 	else:
 		next_btn.visible = false
 		if Global.lvl3done == 1:
-			$Panel/VBoxContainer/MessageLabel.text = "You finished all levels!"
+			$Panel/VBoxContainer/MessageLabel.text = "You finished the whole game!"
+	$Panel/VBoxContainer/ScoreLabel.text = "Score: %d" % Global.score
 
 	$Panel/VBoxContainer/ContinueButton.pressed.connect(_on_continue_pressed)
 

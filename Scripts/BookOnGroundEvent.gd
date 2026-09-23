@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 var player_node: CharacterBody2D = null
 @export var interaction_range: float = 100.0
-@export var interaction_text: String = "Picking up book..."
+@export var interaction_text: String = "Picking up a book..."
 @export var interaction_duration: float = 1.75
 var is_organizing: bool = false
 var interaction_elapsed: float = 0.0

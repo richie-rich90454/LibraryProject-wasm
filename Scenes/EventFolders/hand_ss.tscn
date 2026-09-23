@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://dlj3ocoohgych"]
+[gd_scene load_steps=18 format=3 uid="uid://dlj3ocoohgych"]
 
 [ext_resource type="Texture2D" uid="uid://c5sam3eusp50o" path="res://Assets/PlaceHold/2D Top Down Pixel Art Characters/010.png" id="1_kjmrn"]
 [ext_resource type="Script" uid="uid://btjibr1prb3ho" path="res://Scenes/EventFolders/hand_sss.gd" id="1_yvgya"]
 [ext_resource type="PackedScene" uid="uid://dannavf646uva" path="res://Scenes/object_marker.tscn" id="3_5crgr"]
 [ext_resource type="Texture2D" uid="uid://d073d47lott2l" path="res://Assets/MapAssets/Placeholders.png" id="3_yvgya"]
+[ext_resource type="Texture2D" uid="uid://clr1e3woj60kq" path="res://Assets/Generated/fight_cloud.png" id="4_fight"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kjmrn"]
 friction = 0.8
@@ -110,6 +111,13 @@ position = Vector2(-0.5, 0)
 scale = Vector2(1.05, 1)
 sprite_frames = SubResource("SpriteFrames_cqmd2")
 animation = &"Idle"
+
+[node name="FightCloud" type="Sprite2D" parent="."]
+visible = false
+z_index = 5
+position = Vector2(0, -5)
+scale = Vector2(0.78, 0.78)
+texture = ExtResource("4_fight")
 
 [node name="Area2D" type="Area2D" parent="."]
 

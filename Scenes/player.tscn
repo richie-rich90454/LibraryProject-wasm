@@ -1,14 +1,12 @@
 [gd_scene load_steps=51 format=3 uid="uid://qkge5vvwfp1v"]
 
 [ext_resource type="Script" uid="uid://ccju6wsj5kbnj" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Script" uid="uid://uujdqvclervr" path="res://Scripts/EscapeHandling.gd" id="2_3smsa"]
 [ext_resource type="Texture2D" uid="uid://cliqw8lheh855" path="res://Assets/PlaceHold/2D Top Down Pixel Art Characters/033.png" id="2_fkybt"]
 [ext_resource type="PackedScene" uid="uid://bsbp7nmgsjuit" path="res://Scenes/UIFolders/HUD.tscn" id="3_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://bcskyisaml02y" path="res://Assets/Player/PlayerWithBag.png" id="3_8erm5"]
 [ext_resource type="Texture2D" uid="uid://dcghq21xdhcwp" path="res://Assets/Player/PlayerWithBook.png" id="4_f1ek2"]
 [ext_resource type="PackedScene" uid="uid://b2b5dvlqiob0v" path="res://Scenes/UIFolders/rule_descriptions.tscn" id="4_fkybt"]
 [ext_resource type="Script" uid="uid://bsgpgksfvphwp" path="res://Scripts/rule_descriptions.gd" id="5_x3wgy"]
-[ext_resource type="PackedScene" uid="uid://6nlsojm6s8p5" path="res://Scenes/UIFolders/options_menu.tscn" id="6_x3wgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igrcy"]
 atlas = ExtResource("3_8erm5")
@@ -369,10 +367,6 @@ z_index = 100
 motion_mode = 1
 script = ExtResource("1_cvnsp")
 
-[node name="Node2D" type="Node2D" parent="."]
-process_mode = 3
-script = ExtResource("2_3smsa")
-
 [node name="Animations" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(3, 3)
@@ -401,8 +395,3 @@ metadata/_edit_use_anchors_ = true
 [node name="RuleDescriptions" parent="CanvasLayer" instance=ExtResource("4_fkybt")]
 visible = false
 script = ExtResource("5_x3wgy")
-
-[node name="Options Menu" parent="CanvasLayer" instance=ExtResource("6_x3wgy")]
-process_mode = 3
-offset_right = 26.0
-offset_bottom = 15.0

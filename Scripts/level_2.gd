@@ -18,7 +18,7 @@ func _ready():
 func _process(delta: float) -> void:
 	if _transitioning:
 		return
-	if Global.events_done >= Global.events_total and Global.events_total > 0:
+	if not Global.is_interacting and not Global.has_pending_quiz() and Global.events_done >= Global.events_total and Global.events_total > 0:
 		_transitioning = true
 		Global.lvl2done = 1
 		await get_tree().create_timer(0.5).timeout

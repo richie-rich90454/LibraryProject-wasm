@@ -12,7 +12,7 @@ var run_direction: int = 1
 
 func _ready() -> void:
 	super._ready()
-	interaction_text = "Stopping the running..."
+	interaction_text = "Asking them to walk..."
 	run_start_pos = global_position
 	freeze = true
 
@@ -60,7 +60,7 @@ func _play_run_animation(move_dir: Vector2) -> void:
 		animated_sprite.play(anim_name)
 
 func firsttime():
-	Global.firstRunning = 1
+	Global.request_rule("running")
 	Global.events_done += 1
 	Global.running_done += 1
 	if Global.running_done >= Global.running_total:

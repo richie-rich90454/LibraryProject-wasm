@@ -1,4 +1,9 @@
 extends Label
 
-func _process(_delta: float) -> void:
-	self.text = "  Score: " + str(Global.score)
+func _ready() -> void:
+	Global.score_changed.connect(_on_score_changed)
+	_on_score_changed(Global.score)
+
+
+func _on_score_changed(new_score: int) -> void:
+	text = "Score: %d" % new_score

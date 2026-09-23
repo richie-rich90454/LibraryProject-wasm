@@ -102,14 +102,14 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.85, 0.4, 1)
 theme_override_font_sizes/font_size = 64
-text = "Congratulations!"
+text = "Great Job!"
 horizontal_alignment = 1
 
 [node name="MessageLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
-text = "You completed the level!"
+text = "You finished this level!"
 horizontal_alignment = 1
 
 [node name="NextLevelButton" type="Button" parent="Panel/VBoxContainer"]
@@ -122,6 +122,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_next_hover")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_next_pressed")
 text = "Next Level"
 
+[node name="ScoreLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Score: 0"
+horizontal_alignment = 1
+
 [node name="ContinueButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 custom_minimum_size = Vector2(0, 60)
@@ -130,4 +137,4 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
 theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
-text = "Level Select"
+text = "Pick a Level"

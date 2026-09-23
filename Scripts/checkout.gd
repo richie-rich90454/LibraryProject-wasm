@@ -18,11 +18,11 @@ func _ready() -> void:
 	super._ready()
 	add_to_group("kids")
 	add_to_group("checkout_queue")
-	interaction_text = "Checking out books..."
+	interaction_text = "Checking out a book..."
 	_last_checkout_done = Global.checkout_done
 
 func firsttime():
-	Global.firstCheckout = 1
+	Global.request_rule("checkout")
 	Global.events_done += 1
 	Global.checkout_done += 1
 	if Global.checkout_done >= Global.checkout_total:

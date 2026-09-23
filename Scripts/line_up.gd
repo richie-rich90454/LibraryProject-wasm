@@ -1,6 +1,6 @@
 extends "res://Scripts/hand_ss.gd"
 
-# World position the kid walks to once told to line up (set per instance in level3.tscn).
+# World position where the child lines up to leave (set per instance in level3.tscn).
 @export var lineup_slot: Vector2 = Vector2.ZERO
 # Delay before this kid starts walking out during the finale (stagger).
 @export var walk_out_delay: float = 0.0
@@ -12,10 +12,10 @@ var _walk_tween: Tween = null
 func _ready() -> void:
 	super._ready()
 	add_to_group("kids")
-	interaction_text = "Telling kids to line up..."
+	interaction_text = "Lining up to leave..."
 
 func firsttime():
-	Global.firstLineup = 1
+	Global.request_rule("lineup")
 	Global.events_done += 1
 	Global.lineup_done += 1
 	if Global.lineup_done >= Global.lineup_total:
@@ -52,7 +52,7 @@ func walk_to_line() -> void:
 			animated_sprite.play("Idle")
 			animated_sprite.flip_h = true)  # Face right while waiting in the line
 
-# Called by the final door: walk out toward the right of the screen.
+# Called by the exit door: leave the library through the right of the screen.
 func walk_out() -> void:
 	if _walk_tween and _walk_tween.is_valid():
 		_walk_tween.kill()
