@@ -91,6 +91,7 @@ walk_out_delay = 0.3
 
 [node name="LeaveDoor1" parent="AllEvents" instance=ExtResource("17_ld")]
 position = Vector2(264, 250)
+rotation = 1.5722
 
 [node name="EventGuide" type="Node2D" parent="."]
 script = ExtResource("15_eg")

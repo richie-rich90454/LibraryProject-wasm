@@ -85,6 +85,7 @@ position = Vector2(712, 864)
 
 [node name="EnterDoor" parent="AllEvents" instance=ExtResource("12_ed")]
 position = Vector2(928, 688)
+rotation = -1.571
 
 [node name="EventGuide" type="Node2D" parent="."]
 script = ExtResource("13_eg")
