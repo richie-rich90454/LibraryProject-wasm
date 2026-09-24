@@ -27,6 +27,9 @@ func main(){
 	app.Use("/", func(c *fiber.Ctx) error{
 		requestPath:=c.Path()
 		fullPath:=filepath.Join(distPath, requestPath)
+		if rel, err:=filepath.Rel(distPath, fullPath); err!=nil||rel==".."||strings.HasPrefix(rel, ".."+string(os.PathSeparator)){
+			return c.Next()
+		}
 		if info, err:=os.Stat(fullPath); err==nil&&!info.IsDir(){
 			ext:=strings.ToLower(filepath.Ext(fullPath))
 			switch ext{
